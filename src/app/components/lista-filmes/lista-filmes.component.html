@@ -1,0 +1,30 @@
+<!-- lista-filmes.component.html -->
+
+<div class="filtro">
+  <label for="search">Search by Title:</label>
+  <input type="text" placeholder="Title" id="search" [(ngModel)]="filtroTitulo">
+
+  <label for="sort">Sort by Title:</label>
+  <select id="sort" [(ngModel)]="ordenacaoTitulo">
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+  </select>
+
+  <label for="releaseDateFilter">Filter by Release Date:</label>
+  <input type="date" id="releaseDateFilter" [(ngModel)]="filtroDataLancamento">
+  
+  <button (click)="aplicarFiltros()">Apply Filters</button>
+</div>
+
+<div class="grid">
+  <div class="card" *ngFor="let movie of filmesFiltrados">
+    <div class="image-container" (click)="abrirDetalhesFiltrados(movie)">
+      <img [src]="movie.image" [alt]="movie.title+ 'photo'" class="thumbPhoto">
+    </div>    <div class="text">
+      <h3>{{movie.title}}</h3>
+      <p>{{movie.duration}}</p>
+    </div>
+  </div>
+</div>
+
+<button class="favorite-button" (click)="abrirFavoritosFilme()"><i class="fas fa-star"></i></button>

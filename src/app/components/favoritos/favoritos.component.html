@@ -1,0 +1,25 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+        <button class="fechar-btn" (click)="fecharModal()">X</button>
+        <header class="brand-name">
+            <h1>I want to see!</h1>
+           </header>
+           <div *ngFor="let data of favoritos; let i = index" class="linha">
+            <div class="filme-info">
+              <div class="thumbnail">
+                <img src="{{data.image}}" alt="Thumbnail">
+              </div>
+              <div>
+                <div><b>Title:</b> {{data.title}}</div>
+                <div><b>Description:</b> {{data.description}}</div>
+                <div><b>Release date:</b> {{data.releasedDate}}</div>
+                <div class="genre-info">
+                  <b>Genre:</b>
+                  <p *ngFor="let genre of favoritos[i].genre">{{genre}},</p>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div>
+    </div>
+</div>

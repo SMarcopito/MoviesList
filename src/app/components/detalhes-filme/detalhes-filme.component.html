@@ -1,0 +1,43 @@
+<div class="modal-overlay" >
+    <div class="modal-content">
+      <button class="fechar-btn" (click)="fecharModal()">X</button>
+      <img [src]="filme.image" alt="Imagem do Filme" class="modal-imagem">
+      <div class="filme-info">
+        <label class="switch">
+          <input [(ngModel)]="addToWish" type="checkbox">
+          <span class="slider"></span>
+          <p style="width: 72px;">Add to wish List</p>
+        </label>
+        <h3>{{ filme.title }}</h3>
+        <div class="info-item">
+          <p>Description: {{ filme.description }}</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-star"></i>
+          <p>Rating: {{ filme.rating }}</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-clock"></i>
+          <p>duration: {{ filme.duration }}</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-film"></i>
+          <p>genre: {{ filme.genre }}</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-calendar-alt"></i>
+          <p>Release date: {{ filme.releasedDate }}</p>
+        </div>
+        <div class="info-item">
+          <i class="fab fa-youtube"></i>
+          <iframe width="560" height="315" [src]="sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+filme.trailerLink)" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="info-item" style="display: block;">
+          <i class="fab fa-youtube"></i>
+          <button class="trailer-button" (click)="openTrailerLink(filme.trailerLink)">movie trailer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
