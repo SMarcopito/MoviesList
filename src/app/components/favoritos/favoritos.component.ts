@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -10,17 +10,14 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './favoritos.component.html',
   styleUrl: './favoritos.component.scss'
 })
-export class FavoritosComponent implements OnInit {
+export class FavoritosComponent {
 
   favoritos
 
   constructor(public activeModal: NgbActiveModal) {
    
   }
-  ngOnInit(): void {
-  console.log(this.favoritos);
   
-  }
 
   fecharModal() {
     this.activeModal.close();

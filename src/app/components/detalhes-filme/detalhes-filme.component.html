@@ -32,11 +32,7 @@
           <i class="fab fa-youtube"></i>
           <iframe width="560" height="315" [src]="sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+filme.trailerLink)" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div class="info-item" style="display: block;">
-          <i class="fab fa-youtube"></i>
-          <button class="trailer-button" (click)="openTrailerLink(filme.trailerLink)">movie trailer
-          </button>
-        </div>
+
       </div>
     </div>
   </div>

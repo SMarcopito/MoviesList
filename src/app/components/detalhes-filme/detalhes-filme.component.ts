@@ -19,17 +19,12 @@ export class DetalhesFilmeComponent implements OnInit{
    
    }
    ngOnInit() {
-    console.log(this.favorito);
     if (this.favorito && this.favorito.includes(this.filme)) {
       this.addToWish = true
     }
     
   }
-  openTrailerLink(link){
-   console.log(this.addToWish);
-   console.log(this.filme);
-   
-  }
+  
 
 
   fecharModal() {

@@ -81,12 +81,9 @@ export class ListaFilmesComponent implements OnInit {
       .filter(movie => movie.title.toLowerCase().includes(this.filtroTitulo.toLowerCase()))
       .filter(movie => {
         if (this.filtroDataLancamento) {
-          console.log('Filme:', movie);
+        
           let filtro =  this.datePipe.transform(this.filtroDataLancamento, 'dd mm yyyy');
           const formattedReleaseDate = this.datePipe.transform(movie.releasedDate, 'dd mm yyyy');
-          console.log('Data Formatada:', formattedReleaseDate);
-          
-          console.log('Filtro de Data:', this.filtroDataLancamento);
           
           return formattedReleaseDate === filtro;
         }
